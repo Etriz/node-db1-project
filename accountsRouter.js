@@ -9,6 +9,12 @@ router.get("/", async (req, res, next) => {
   try {
     const data = await db("accounts");
     res.status(200).json(data);
+    //     if (req.query === {}) {
+    // } else {
+    //   const { limit, sortby, sortdir } = req.query;
+    //   const data = await db("accounts").orderBy(sortby, sortdir).limit(limit);
+    //   res.status(200).json(data);
+    // }
   } catch (error) {
     console.log(error);
     next({ status: 500, errorMessage: "Unable to get accounts" });
